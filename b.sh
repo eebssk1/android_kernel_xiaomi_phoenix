@@ -12,8 +12,9 @@ cp arch/arm64/configs/phoenix_defconfig  out/.config
 
 export ARCH=arm64
 export CROSS_COMPILE=aarch64-linux-gnu-
+export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
 
-schedtool -B -e make -j3 CC=clang LD=ld.lld NM=llvm-nm OBJCOPY=llvm-objcopy O=out
+schedtool -B -e make -j3 CC=clang LD=ld.lld NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip O=out
 schedtool -B -e make qcom/phoenix-sdmmagpie.dtb -j3 CC=clang LD=ld.lld NM=llvm-nm OBJCOPY=llvm-objcopy O=out
 
 cp out/arch/arm64/boot/Image.gz AnyKernel3/zImage
