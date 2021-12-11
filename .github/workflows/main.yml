@@ -40,6 +40,6 @@ jobs:
         with:
             name: things
             path: |
-                  arch/arm64/boot/Image.gz
-                  arch/arm64/boot/dts/qcom/phoenix-sdmmagpie.dtb
-                  arch/arm64/boot/dtb.img
+                  out/arch/arm64/boot/Image.gz
+                  out/arch/arm64/boot/dts/qcom/phoenix-sdmmagpie.dtb
+                  out/arch/arm64/boot/dtbo.img

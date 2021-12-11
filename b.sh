@@ -6,9 +6,11 @@ sudo apt-get install -y libelf-dev libssl-dev dwarves bc jitterentropy-rngd sche
 
 export PATH=${PWD}/proton-clang/bin:$PATH
 
-cp arch/arm64/configs/phoenix_defconfig  .config
+mkdir out
+
+cp arch/arm64/configs/phoenix_defconfig  out/.config
 
 export ARCH=arm64
 export CROSS_COMPILE=aarch64-linux-gnu-
 
-schedtool -B -e make -j3 CC=clang
+schedtool -B -e make -j3 CC=clang O=out
