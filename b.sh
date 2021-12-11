@@ -14,3 +14,8 @@ export ARCH=arm64
 export CROSS_COMPILE=aarch64-linux-gnu-
 
 schedtool -B -e make -j3 CC=clang LD=ld.lld NM=llvm-nm OBJCOPY=llvm-objcopy O=out
+
+
+cp out/arch/arm64/boot/Image.gz AnyKernel3/zImage
+cp out/arch/arm64/boot/dts/qcom/phoenix-sdmmagpie.dtb AnyKernel3/dtb
+cp out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img

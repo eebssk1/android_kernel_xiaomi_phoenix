@@ -35,11 +35,8 @@ jobs:
         run: |
              chmod 0755 b.sh
              ./b.sh
-      - name: Upload a Build Artifact
+      - name: flashble zip
         uses: actions/upload-artifact@v2.3.0
         with:
-            name: things
-            path: |
-                  out/arch/arm64/boot/Image.gz
-                  out/arch/arm64/boot/dts/qcom/phoenix-sdmmagpie.dtb
-                  out/arch/arm64/boot/dtbo.img
+            name: flashable
+            path: AnyKernel3/*
