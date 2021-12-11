@@ -13,4 +13,4 @@ cp arch/arm64/configs/phoenix_defconfig  out/.config
 export ARCH=arm64
 export CROSS_COMPILE=aarch64-linux-gnu-
 
-schedtool -B -e make -j3 CC=clang LD=ld.lld O=out
+schedtool -B -e make -j3 CC=clang LD=ld.lld NM=llvm-nm O=out
